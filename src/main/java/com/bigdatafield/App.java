@@ -2,7 +2,6 @@ package com.bigdatafield;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
@@ -44,6 +43,7 @@ public class App {
 		JavaRDD<OutputFileData> outputRDD = sc.parallelize(outputFileDataList);
 		
 		outputRDD.filter(new Function<OutputFileData, Boolean>() {
+			private static final long serialVersionUID = 8133353225424900420L;
 			@Override
 			public Boolean call(OutputFileData arg0) throws Exception {
 				
@@ -61,7 +61,6 @@ public class App {
 
 		JavaRDD<InputFileData> filterRDD = inputRDD.filter(new Function<InputFileData, Boolean>() {
 			private static final long serialVersionUID = 3794780603743272886L;
-
 			@Override
 			public Boolean call(InputFileData input) throws Exception {
 				// Date currentDate = Calendar.getInstance().getTime();
