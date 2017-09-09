@@ -4,6 +4,7 @@
 package com.bigdatafield;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -16,8 +17,8 @@ public class InputFileData implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 7832601062779713992L;
-	private int count;
-	private String id;
+	private BigInteger count;
+	private String runId;
 	private Date timeStamp;
 	private String status;
 	
@@ -38,8 +39,8 @@ public class InputFileData implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + count;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + count.intValue();
+		result = prime * result + ((runId == null) ? 0 : runId.hashCode());
 		result = prime * result + ((timeStamp == null) ? 0 : timeStamp.hashCode());
 		return result;
 	}
@@ -54,10 +55,10 @@ public class InputFileData implements Serializable{
 		InputFileData other = (InputFileData) obj;
 		if (count != other.count)
 			return false;
-		if (id == null) {
-			if (other.id != null)
+		if (runId == null) {
+			if (other.runId != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!runId.equals(other.runId))
 			return false;
 		if (timeStamp == null) {
 			if (other.timeStamp != null)
@@ -66,17 +67,17 @@ public class InputFileData implements Serializable{
 			return false;
 		return true;
 	}
-	public int getCount() {
+	public BigInteger getCount() {
 		return count;
 	}
-	public void setCount(int count) {
+	public void setCount(BigInteger count) {
 		this.count = count;
 	}
-	public String getId() {
-		return id;
+	public String getRunId() {
+		return runId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setRunId(String id) {
+		this.runId = id;
 	}
 	
 

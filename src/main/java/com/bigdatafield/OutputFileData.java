@@ -5,21 +5,21 @@ import java.io.Serializable;
 public class OutputFileData implements Serializable{
 	
 	private static final long serialVersionUID = -8458742390059007789L;
-	private String id;
+	private String runId;
 
-	public String getId() {
-		return id;
+	public String getRunId() {
+		return runId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setRunId(String id) {
+		this.runId = id;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((runId == null) ? 0 : runId.hashCode());
 		return result;
 	}
 
@@ -32,10 +32,10 @@ public class OutputFileData implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		OutputFileData other = (OutputFileData) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (runId == null) {
+			if (other.runId != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!runId.equals(other.runId))
 			return false;
 		return true;
 	}
